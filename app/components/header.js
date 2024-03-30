@@ -26,12 +26,6 @@ export default function Header() {
             Home
           </Link>
           <Link
-            className={`link ${pathname === "/blogs" ? "link-active" : ""}`}
-            href="/blogs"
-          >
-            Blogs
-          </Link>
-          <Link
             className={`link ${pathname === "/aboutme" ? "link-active" : ""}`}
             href="/aboutme"
           >

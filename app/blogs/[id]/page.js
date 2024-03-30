@@ -1,44 +1,34 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/home.module.css";
+import styles from "../../../styles/home.module.css";
 
-export default async function Home() {
-  const newest_res = await fetch(
-    "http://localhost:3000/api/travels?orderby=id&sort=desc"
-  );
+export default async function Blog(req) {
+  const id = req.params.id;
+  const blog_res = await fetch("http://localhost:3000/api/travels/" + id);
   const mytravels_res = await fetch(
     "http://localhost:3000/api/travels?orderby=id&sort=asc&limit=3"
   );
-  const newest = await newest_res.json();
+  const blog = await blog_res.json();
   const mytravels = await mytravels_res.json();
-
   return (
     <div className="container">
       <div className="main">
         <div className="main-content">
-          <h1>Newest</h1>
-          <div className={styles.box_newest}>
-            {newest.map(({ id, name, detail, coverimage }) => (
-              <div className={styles.travel_panel}>
-                <div className={styles.travel_img}>
-                  <Link href={`/blogs/${id}`}>
-                    <Image src={coverimage} fill="true" alt={name} />
-                  </Link>
-                </div>
-                <div className={styles.travel_content}>
-                  <div className={styles.travel_title}>
-                    <h3>
-                      <Link href={`/blogs/${id}`}>{name}</Link>
-                    </h3>
-                    <hr />
-                  </div>
-                  <div className={styles.travel_desc}>
-                    {detail.substring(0, 170)}
-                  </div>
-                </div>
+          {blog.map(({ id, name, detail, coverimage, latitude, longitude }) => (
+            <div className={styles.blog_content}>
+              <div className={styles.blog_img}>
+                <Image src={coverimage} fill="true" alt={name} title={name} />
               </div>
-            ))}
-          </div>
+              <div>
+                <h1>{name}</h1>
+              </div>
+              <div className={styles.blog_latlng}>
+                {latitude + ", " + longitude}
+              </div>
+              <hr />
+              <div className={styles.blog_detail}>{detail}</div>
+            </div>
+          ))}
         </div>
         <div className="sidebar">
           <div className="profile">

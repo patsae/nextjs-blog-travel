@@ -13,7 +13,7 @@ export default function Aboutme() {
         </div>
         <div className={styles.box_right}>
           <div className={styles.profile_content}>
-            <h2>Hi, my name is Byrd</h2>
+            <h2>Blog travel</h2>
             <Link
               className="link-small"
               href="https://github.com/patsae/nextjs-blog-travel.git"
