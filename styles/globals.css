@@ -1,0 +1,116 @@
+body {
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(235, 235, 235, 1) 100%
+  );
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: relative;
+}
+h2,
+h3,
+h4 {
+  color: orange;
+  margin: 0.5rem 0;
+}
+hr {
+  border: none;
+  border-bottom: thin solid #ccc;
+}
+.container {
+  padding: 0 8rem;
+}
+.header,
+.footer {
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.footer small {
+  text-align: center;
+}
+.logo {
+  width: 20%;
+  height: 80px;
+  margin-right: auto;
+}
+.logo img {
+  width: 100% !important;
+  position: relative !important;
+}
+.link {
+  width: fit-content !important;
+  padding: 1rem 0.6rem;
+  margin: 0 0.2rem;
+  color: #333;
+  text-decoration: none;
+  text-align: center;
+}
+.link:hover {
+  color: orange;
+  border-bottom: 2px solid orange;
+}
+.link-active {
+  color: orange !important;
+  border-bottom: 2px solid orange;
+}
+.link-small {
+  color: #333 !important;
+  font-style: italic;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.main {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+  margin-top: 2rem;
+}
+.main-content {
+  width: 70%;
+  height: fit-content;
+  /* padding: 1rem; */
+}
+.sidebar {
+  width: 30%;
+  /* padding: 1rem; */
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.profile {
+  padding: 1rem;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  margin: 0 auto;
+}
+.profile img {
+  width: 100% !important;
+  border-radius: 100%;
+  border: thick solid orange;
+  position: relative !important;
+}
+.activity-box,
+.me {
+  padding: 0 1rem;
+}
+.me {
+  text-align: center;
+}
+.introduce-myself {
+  text-align: justify;
+  text-indent: 2rem;
+}
